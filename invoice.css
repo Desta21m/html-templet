@@ -1,0 +1,89 @@
+/* Set A4 page size with proper margins */
+@page {
+    size: A4;
+    margin: 1in; /* 1 inch margin for all sides */
+}
+
+/* Reset body styles for better control */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: start; /* Align to the top of the page */
+    padding: 20px; /* Add spacing around the content */
+    background-color: #f9f9f9; /* Optional: background color for the page */
+    margin: 0;
+    height: 100vh; /* Full viewport height */
+    box-sizing: border-box;
+}
+
+
+/* Container to center content and prevent overflow */
+.invoice-container {
+    width: 100%; /* Full-width container */
+    max-width: 180mm; /* Restrict width to fit inside margins */
+    background-color: #fff;
+    padding: 10px; /* Optional padding */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional for visual clarity */
+}
+
+/* Header and Footer */
+.invoice-header, .invoice-footer {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.invoice-header h1 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.invoice-header p {
+    margin: 2px 0;
+}
+
+/* Section headings */
+h2, h3 {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+/* Customer and Vehicle Details */
+p {
+    margin: 3px 0;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 6px;
+    font-size: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Totals Section */
+h3 {
+    margin-top: 20px;
+}
+
+p strong {
+    font-weight: bold;
+}
+
+/* Footer styling */
+.invoice-footer p {
+    font-size: 12px;
+    margin: 5px 0;
+}
