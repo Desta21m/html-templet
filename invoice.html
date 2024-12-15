@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invoice</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .invoice-header, .invoice-footer { text-align: center; margin-bottom: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .totals { text-align: right; }
+    </style>
+</head>
+<body>
+    <div class="invoice-header">
+        <h1>Vehicure™ Buzz India PVT LTD</h1>
+        <p>#251, NIT-4, Faridabad, Haryana, 121001</p>
+        <p>Phone No.: +918607880788 | Email: contact@bikefixup.in</p>
+        <p>GSTIN: 06AAJCV4663J1ZW | State: 06-Haryana</p>
+    </div>
+    
+    <h2>Tax Invoice</h2>
+    <p><strong>Invoice No:</strong> ${invoice.invoiceNumber}</p>
+    <p><strong>Invoice Date:</strong> ${invoice.invoiceDate}</p>
+
+    <h3>Customer Details:</h3>
+    <p>Name: ${customer.name}</p>
+    <p>Phone: ${customer.phone}</p>
+    <p>Address: ${customer.address}, ${customer.city}, ${customer.state}</p>
+    <p>GST: ${customer.gst}</p>
+
+    <h3>Vehicle Details:</h3>
+    <p>Make: ${vehicle.make}</p>
+    <p>Model: ${vehicle.model}</p>
+    <p>Vehicle Reg: ${vehicle.registration}</p>
+
+    <h3>Invoice Details:</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Price</th>
+                <th>Unit</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="item : ${invoice.items}">
+                <td th:text="${item.name}">Item Name</td>
+                <td th:text="${item.price}">Price</td>
+                <td th:text="${item.unit}">Unit</td>
+                <td th:text="${item.amount}">Amount</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Totals:</h3>
+    <p>Sub Total: ${invoice.subTotal}</p>
+    <p>Tax (18%): ${invoice.tax}</p>
+    <p>Discount: ${invoice.discount}</p>
+    <p>Round Off: ${invoice.roundOff}</p>
+    <p>Total: ${invoice.total}</p>
+
+    <div class="invoice-footer">
+        <p>For Vehicure™ Buzz India PVT LTD</p>
+        <p>Authorized Signatory</p>
+    </div>
+</body>
+</html>
